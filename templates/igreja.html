@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localização da Igreja</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/igreja.css') }}">
+    <style>
+        /* Resetando margens e padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Corpo e container principal */
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        /* Barra superior */
+        .barra-superior {
+            background-color: #2e5e33; /* Verde */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .barra-superior h2 {
+            font-size: 18px;
+        }
+
+        /* Barra inferior */
+        .barra-inferior {
+            background-color: #FF5722; /* Laranja */
+            color: white;
+            text-align: center;
+            padding: 8px 0;
+        }
+
+        .barra-inferior p {
+            font-size: 12px;
+        }
+
+        /* Container central */
+        .container {
+            display: flex;
+            flex-direction: column; /* Ajustado para coluna */
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            height: 100%;
+            flex-grow: 1; /* Garantir que ocupe espaço disponível */
+        }
+
+        /* Card */
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* Título principal */
+        h1 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #2e5e33;
+        }
+
+        /* Map container */
+        .map-container {
+            margin: 15px 0;
+        }
+
+        /* Listagem de transporte */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        ul li {
+            font-size: 14px;
+            margin: 4px 0;
+        }
+
+        /* Foto da igreja */
+        img {
+            border-radius: 6px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            height: auto;
+        }
+
+        /* Estilos do botão */
+        .botao-saber {
+            background-color: #FF5722;
+    color: white;
+    font-size: 21px;
+    padding: 13px 60px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+        }
+
+        .botao-saber:hover {
+            background-color: #e64a19;
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 600px) {
+            .card {
+                padding: 10px;
+                position: relative;
+                transform: translateY(-19px);
+            }
+
+            h1 {
+                font-size: 16px;
+            }
+
+            .barra-superior h2,
+            .barra-inferior p {
+                font-size: 14px;
+            }
+
+            iframe {
+                height: 200px;
+            }
+
+            /* Map container */
+            .map-container {
+                margin: 15px 0;
+            }
+
+            .map-container iframe {
+                width: 100%;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="barra-superior">
+        <h2>IBCD JOVENS</h2>
+    </header>
+
+    <main class="container">
+        <div class="card">
+            <h1>Localização</h1>
+            
+            <h2>Como Chegar</h2>
+            
+            <!-- Google Maps Embed -->
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.874730370898!2d-60.002690825029035!3d-3.127803196847674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c059c0617b3cf%3A0x51797c30db7d6886!2sIgreja%20Batista%20Catorze%20de%20Dezembro!5e0!3m2!1spt-BR!2sbr!4v1732318175343!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <h2>Transporte Público</h2>
+            <ul>
+                <li>Ônibus - 624  | 677</li>
+                <li>Ônibus - 010  | 611</li>
+                <li>Ônibus - 621  | 705</li>
+            </ul>
+        </div>
+
+        <!-- Botão "Já sei agora!" -->
+
+        <a href="/comeca">
+  <button class="botao-saber">Já sei agora!</button>
+</a>
+
+    </main>
+
+    <footer class="barra-inferior">
+        <p>&copy; 2024 IBCD  - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

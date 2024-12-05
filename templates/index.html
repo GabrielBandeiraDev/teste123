@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acampamento Cristão</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Homepage.css') }}">
+    <style>
+        /* Estilos para o ícone do administrador */
+        .admin-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .admin-icon i {
+            font-size: 30px;
+            color: #333;
+            cursor: pointer;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .admin-icon i:hover {
+            color: #555;
+            transform: scale(1.1);
+        }
+
+        /* Estilos para o cabeçalho */
+        header {
+            position: relative;
+            padding: 20px;
+            background-color: #2e5e33;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        /* Botão de 3 pontos */
+        .menu-icon {
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Menu de navegação escondido */
+        .nav-menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: #2e5e33;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            width: auto;
+        }
+
+        .nav-menu a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            background-color: #1c3d23;
+        }
+
+        /* Outros estilos para o conteúdo */
+        section {
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">
+           
+            <!-- Ícone de 3 pontos -->
+            <div class="menu-icon" onclick="toggleMenu()">&#x22EE;</div> 
+        </div>
+
+        <!-- Menu de navegação escondido -->
+        <div class="nav-menu" id="navMenu">
+            <a href="#informacoes">Sobre o Acampamento</a>
+            <a href="/login">Restrito</a>
+             
+        </div>
+    </header>
+
+    <!-- Seção Hero -->
+    <section class="hero" id="hero">
+        <!-- Conteúdo Hero -->
+    </section>
+
+    <!-- Seção de Informações -->
+    <section class="informacoes" id="informacoes">
+        <h2>Sobre o Acampamento</h2>
+        <p>Nosso evento cristão é uma oportunidade única de vivenciar momentos de comunhão, aprendizado e diversão.</p>
+        <!-- Carrossel de Imagens -->
+        <div class="carrossel">
+            <div class="slide">
+                <img src="{{ url_for('static', filename='css/1foto.png') }}" alt="Foto 1">
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='css/2foto.png') }}" alt="Foto 2">
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='css/3foto.png') }}" alt="Foto 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Atividades -->
+    <section class="atividades" id="atividades">
+        <h2>Atividades</h2>
+        <p>Confira algumas das atividades que preparamos para você:</p>
+        <div class="atividades-grid">
+            <div class="atividade">
+                <h3>Louvores e Adoração</h3>
+                <p>Conecte-se com Deus através da música.</p>
+                <img src="{{ url_for('static', filename='css/adora.png') }}" alt="Louvores e Adoração">
+            </div>
+            <div class="atividade">
+                <h3>Estudos Bíblicos</h3>
+                <p>Aprenda mais sobre a palavra de Deus com nossos estudos.</p>
+                <img src="{{ url_for('static', filename='css/estudo.png') }}" alt="Estudos Bíblicos">
+            </div>
+            <div class="atividade">
+                <h3>Comunhão</h3>
+                <p>Momentos de diversão e comunhão.</p>
+                <img src="{{ url_for('static', filename='css/comun.png') }}" alt="Comunhão">
+            </div>
+            <div class="atividade">
+                <h3>Recreação</h3>
+                <p>Atividades ao ar livre para relaxar e se divertir.</p>
+                <img src="{{ url_for('static', filename='css/recrea.png') }}" alt="Recreação">
+            </div>
+        </div>
+    </section>
+
+    <!-- Nova Seção de Inscrição -->
+    <section class="inscricao-final">
+        <h2>Vai Ficar de Fora?</h2>
+        <p>Se inscreva aqui e venha fazer parte desse evento incrível!</p>
+        <a href="/escolha" class="btn">Inscreva-se Agora</a>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section class="contato" id="contato">
+        <h2>Contato</h2>
+        <p>Telefone: (11) 1234-5678</p>
+        <a href="https://wa.me/551112345678" class="btn2">Fale Conosco no WhatsApp</a>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Acampamento Cristão. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Scripts para o Carrossel -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carrossel .slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Inicializa o carrossel
+        showSlide(currentSlide);
+        setInterval(nextSlide, 3000);
+
+        // Função para alternar o menu
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';  // Fecha o menu
+            } else {
+                menu.style.display = 'block';  // Abre o menu
+            }
+        }
+    </script>
+</body>
+</html>

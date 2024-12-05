@@ -1,0 +1,117 @@
+/* Resetando margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo e container principal */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+/* Barra superior */
+.barra-superior {
+    background-color: #2e5e33; /* Verde */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.barra-superior h2 {
+    font-size: 24px;
+}
+
+/* Barra inferior */
+.barra-inferior {
+    background-color: #2e5e33; /* Laranja */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.barra-inferior p {
+    font-size: 14px;
+}
+
+/* Container central */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Card */
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+/* Título principal */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2e5e33; /* Verde */
+}
+
+/* Botões */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.convidado {
+    background-color: #2e5e33; /* Verde */
+    color: white;
+}
+
+.membro {
+    background-color: #FF5722; /* Laranja */
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+
+    .barra-superior h2,
+    .barra-inferior p {
+        font-size: 16px;
+    }
+}
