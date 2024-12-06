@@ -1,0 +1,132 @@
+/* styles/Home.module.css */
+
+.header {
+  background-color: var(--verde-principal); /* Cor verde */
+  color: var(--branco); /* Texto branco */
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo h1 {
+  font-size: 1.8em;
+}
+
+.hero {
+  background-image: url('/images/grupao.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--branco);
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+  height: 300px;
+}
+
+.nosso{
+  margin: 1;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.informacoes {
+  padding: 60px 10%;
+  text-align: center;
+}
+
+.carrossel {
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.slide {
+  min-width: 100%;
+}
+
+.atividadesGrid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.atividade {
+  background: var(--branco);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.atividade:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.atividade img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.inscricaoFinal {
+  text-align: center;
+  padding: 60px 10%;
+}
+
+.contato {
+  background-color: var(--verde-principal);
+  color: var(--branco);
+  padding: 30px;
+  text-align: center;
+}
+
+
+
+.btn {
+  display: inline-block;
+  background-color: var(--laranja-principal);
+  color: var(--branco);
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e64a19;
+}
+
+.btn2 {
+  display: inline-block;
+  background-color: #18530f;
+  color: var(--branco);
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn2:hover {
+  background-color: var(--fundo-escuro);
+}
+
+/* styles/Home.module.css */
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+/* Adicione o resto do código CSS conforme necessário */
+
+
+
