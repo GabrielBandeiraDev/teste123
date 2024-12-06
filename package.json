@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "build": "next build"
+  },
+  "dependencies": {
+    "next": "^13.0.0",
+    "vercel": "^39.1.3"
+  }
+}

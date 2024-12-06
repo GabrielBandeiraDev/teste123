@@ -3,7 +3,6 @@ import '../styles/escolha.css';
 import '../styles/globals.css'; // Importando o CSS Global
 import '../styles/escolhaconv.css';
 import '../styles/inscricao.css';
-import '../styles/pagamento.css';
 
 import { useEffect } from 'react';
 
