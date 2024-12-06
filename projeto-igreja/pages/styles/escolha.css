@@ -1,0 +1,144 @@
+/* Resetando margens e padding */
+.nome {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo e container principal */
+.kilua {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh; /* 100% da altura da viewport */
+    background-color: #f4f4f4;
+}
+
+/* Barra superior */
+.barra-superior {
+    background-color: #2e5e33; /* Verde */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.barra-superior h2 {
+    font-size: 24px;
+}
+
+/* Barra inferior */
+/* Barra inferior com estilo */
+.barra-inferior {
+    background-color: #2e5e33; /* Verde */
+    color: white;
+    text-align: center;
+    padding: 19px 0;
+    
+    /* Estilo para garantir que a barra fique no final da página */
+    position: fixed; /* Fixa a barra no fundo */
+    left: 0; /* Alinha à esquerda */
+    bottom: 0; /* Alinha ao fundo da página */
+    width: 100%; /* Garante que a barra ocupe toda a largura */
+    z-index: 1000; /* Garante que a barra fique acima de outros elementos */
+}
+
+
+.barra-inferior p {
+    font-size: 14px;
+}
+
+/* Container central */
+/* Container central */
+.container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    flex-grow: 1; /* O conteúdo se expande para ocupar o espaço restante */
+    height: 100vh; /* Garante que a altura da tela seja 100% da altura da viewport */
+    box-sizing: border-box; /* Inclui o padding no cálculo da largura/altura */
+}
+
+
+.card {
+    padding: 20px;
+    width: 90%;
+    min-height: 1px;
+}
+
+
+/* Card */
+.card {
+    margin-top: -90px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 90%;
+    min-height: 300px; /* Definindo um tamanho mínimo para o card */
+    max-width: 320px; /* Ajusta a largura máxima do card */
+    box-sizing: border-box;
+}
+
+
+/* Título principal */
+.puro {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2e5e33; /* Verde */
+}
+
+/* Botões */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Faz os botões ocuparem a largura total disponível */
+    height: 60px; /* Define uma altura fixa */
+}
+
+.convidado {
+    background-color: #2e5e33; /* Verde */
+    color: white;
+}
+
+.membro {
+    background-color: #FF5722; /* Laranja */
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+        width: 90%; /* Garante que o card ocupe 90% da largura da tela */
+        min-height: 1px; /* Ajuste para telas menores */
+    }
+
+    .puro {
+        font-size: 20px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+
+    .barra-superior h2,
+    .barra-inferior p {
+        font-size: 16px;
+    }
+}
